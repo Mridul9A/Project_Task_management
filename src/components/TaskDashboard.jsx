@@ -125,15 +125,15 @@ function TaskDashboard() {
 
   const tasksPerPage = 5;
 
-  // Filter and paginate tasks
+
   const filteredTasks = useMemo(() => {
     let filtered = allTasks.filter(task => {
-      // Tab filtering
+
       if (activeTab === "Completed Tasks" && task.status !== "Completed") return false;
       if (activeTab === "Pending Tasks" && task.status !== "Pending") return false;
       if (activeTab === "Overdue Tasks" && task.status !== "Overdue") return false;
 
-      // Dropdown filtering
+
       if (filters.owner && !task.owner.toLowerCase().includes(filters.owner.toLowerCase())) return false;
       if (filters.customer && task.customer !== filters.customer) return false;
       if (filters.status && task.status !== filters.status) return false;
@@ -151,7 +151,7 @@ function TaskDashboard() {
     currentPage * tasksPerPage
   );
 
-  // Update summary cards based on filtered data
+
   const updatedSummaryCards = useMemo(() => {
     const pending = allTasks.filter(t => t.status === "Pending").length;
     const overdue = allTasks.filter(t => t.status === "Overdue").length;
@@ -208,7 +208,7 @@ function TaskDashboard() {
       ...prev,
       [filterType]: value
     }));
-    setCurrentPage(1); // Reset to first page when filtering
+    setCurrentPage(1); 
   };
 
   const handleReset = () => {
@@ -229,7 +229,7 @@ function TaskDashboard() {
 
   const handleActionClick = (task, e) => {
     e.stopPropagation();
-    // Create action menu
+
     const actions = ['Edit', 'Delete', 'Duplicate', 'Assign'];
     const action = prompt(`Choose action for ${task.id}:\n${actions.map((a, i) => `${i + 1}. ${a}`).join('\n')}`);
     
@@ -241,7 +241,7 @@ function TaskDashboard() {
     }
   };
 
-  // Get unique values for filter dropdowns
+
   const uniqueOwners = [...new Set(allTasks.map(task => task.owner))];
   const uniqueCustomers = [...new Set(allTasks.map(task => task.customer))];
   const uniqueStatuses = [...new Set(allTasks.map(task => task.status))];
@@ -252,7 +252,7 @@ function TaskDashboard() {
 
   return (
     <div>
-      {/* Summary Cards */}
+
       <div className="summary-cards">
         {updatedSummaryCards.map((card, idx) => (
           <div key={idx} className={`summary-card ${card.color}`}>
@@ -262,7 +262,7 @@ function TaskDashboard() {
         ))}
       </div>
 
-      {/* Tabs + Filters */}
+
       <div className="task-filters">
         <div className="tabs">
           <button 
@@ -332,7 +332,7 @@ function TaskDashboard() {
         </div>
       </div>
 
-      {/* Selected Tasks Actions */}
+
       {selectedTasks.length > 0 && (
         <div className="bulk-actions">
           <span>{selectedTasks.length} task(s) selected</span>
@@ -348,7 +348,7 @@ function TaskDashboard() {
         </div>
       )}
 
-      {/* Task Table */}
+
       <div className="table-container">
         <table>
           <thead>
@@ -465,7 +465,7 @@ function TaskDashboard() {
         </span>
       </div>
 
-      {/* Popup */}
+
       <Popup 
         isOpen={isPopupOpen} 
         onClose={handleClosePopup} 

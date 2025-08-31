@@ -8,7 +8,7 @@ function Popup({ isOpen, onClose, task }) {
   const [newComment, setNewComment] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Initialize description when task changes
+
   React.useEffect(() => {
     if (task) {
       setDescription(task.desc || '');
@@ -19,10 +19,10 @@ function Popup({ isOpen, onClose, task }) {
 
   const handleSave = () => {
     if (activeTab === 'Description') {
-      // Save description logic
+
       alert('Description saved successfully!');
     } else if (activeTab === 'Notes') {
-      // Save notes logic
+
       alert('Notes saved successfully!');
     }
   };
@@ -262,7 +262,7 @@ function Popup({ isOpen, onClose, task }) {
             <div className="popup-tab-content">
               {renderTabContent()}
 
-              {/* Comments Section - Show on all tabs */}
+
               <div className="comments-section">
                 <div className="comments-header">
                   <h4>Comments</h4>
