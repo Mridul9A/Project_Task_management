@@ -1,6 +1,3 @@
-/* ==============================
-   Global Layout
-============================== */
 .app-container {
   display: flex;
   height: 100vh;
@@ -19,9 +16,7 @@
   overflow-y: auto;
 }
 
-/* ==============================
-   Sidebar
-============================== */
+
 .sidebar {
   width: 220px;
   background: white;
@@ -408,9 +403,6 @@
   font-weight: bold;
 }
 
-/* ==============================
-   Summary Cards
-============================== */
 .summary-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -450,9 +442,7 @@
   color: gray;
 }
 
-/* ==============================
-   Filters + Tabs
-============================== */
+
 .task-filters {
   display: flex;
   justify-content: space-between;
@@ -512,9 +502,7 @@
   background: #f0f0f0;
 }
 
-/* ==============================
-   Task Table
-============================== */
+
 .table-container {
   background: white;
   border-radius: 6px;
@@ -653,9 +641,7 @@ td {
   background: #ddd;
 }
 
-/* ==============================
-   Pagination
-============================== */
+
 .pagination {
   display: flex;
   gap: 6px;
@@ -694,9 +680,7 @@ td {
   margin-left: 16px;
 }
 
-/* ==============================
-   Popup Styles
-============================== */
+
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -979,7 +963,7 @@ td {
   color: #555;
 }
 
-/* Tickets Section */
+
 .tickets-section {
   margin-bottom: 20px;
 }
@@ -1035,7 +1019,7 @@ td {
   color: #666;
 }
 
-/* Comments Section */
+
 .comments-section {
   border-top: 1px solid #eee;
   padding-top: 16px;
@@ -1180,9 +1164,6 @@ td {
   cursor: not-allowed;
 }
 
-/* ==============================
-   Responsive Design
-============================== */
 @media (max-width: 768px) {
   .popup-container {
     width: 90vw;
